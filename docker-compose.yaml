@@ -10,11 +10,11 @@ services:
         PYTORCH_VERSION: ${PYTORCH_VERSION:-2.9.0}
         COMFYUI_BUILD_REF: ${COMFYUI_BUILD_REF:-}
         # Base on Python image which is base + python + jupyter
-        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/starforge-ai/python:${PYTHON_VERSION:-3.11}-v2-cuda-12.9.1-base-24.04}
+        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/starforge-ai/python:${PYTHON_VERSION:-3.11}-v2-cuda-13.0.2-base-24.04}
       tags:
-        - "ghcr.io/starforge-ai/comfyui:${IMAGE_TAG:-pytorch-${PYTORCH_VERSION:-2.9.0}-py3.11-v2-cuda-12.9.1-base-24.04}"
+        - "ghcr.io/starforge-ai/comfyui:${IMAGE_TAG:-pytorch-${PYTORCH_VERSION:-2.9.0}-py3.11-v2-cuda-13.0.2-base-24.04}"
 
-    image: ghcr.io/starforge-ai/comfyui:${IMAGE_TAG:-pytorch-${PYTORCH_VERSION:-2.9.0}-py3.11-v2-cuda-12.9.1-base-24.04}
+    image: ghcr.io/starforge-ai/comfyui:${IMAGE_TAG:-pytorch-${PYTORCH_VERSION:-2.9.0}-py3.11-v2-cuda-13.0.2-base-24.04}
 
     ## For Nvidia GPU's - You probably want to uncomment this
     #deploy:

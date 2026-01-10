@@ -1,11 +1,11 @@
 # For build automation - Allows building from any ai-dock base image
 # Use a *cuda*base* image as default because pytorch brings the libs
-ARG IMAGE_BASE="ghcr.io/ai-dock/python:3.10-v2-cuda-12.1.1-base-22.04"
+ARG IMAGE_BASE="ghcr.io/starforge-ai/python:3.11-v2-cuda-12.9.1-base-24.04"
 FROM ${IMAGE_BASE}
 
-LABEL org.opencontainers.image.source https://github.com/ai-dock/comfyui
-LABEL org.opencontainers.image.description "ComfyUI Stable Diffusion backend and GUI"
-LABEL maintainer="Rob Ballantyne <rob@dynamedia.uk>"
+LABEL org.opencontainers.image.source=https://github.com/starforge-ai/comfyui
+LABEL org.opencontainers.image.description="ComfyUI Stable Diffusion backend and GUI"
+LABEL maintainer="Lester Foss <lfoss0612@gmail.com>"
 
 ENV COMFYUI_VENV=$VENV_DIR/comfyui
 ENV COMFYUI_VENV_PYTHON=$COMFYUI_VENV/bin/python
@@ -19,9 +19,9 @@ ENV IMAGE_SLUG="comfyui"
 ENV OPT_SYNC=ComfyUI
 
 # Prepare environment
-ARG PYTHON_VERSION="3.10"
+ARG PYTHON_VERSION="3.11"
 ENV PYTHON_VERSION=${PYTHON_VERSION}
-ARG PYTORCH_VERSION="2.4.0"
+ARG PYTORCH_VERSION="2.9"
 ENV PYTORCH_VERSION="${PYTORCH_VERSION}"
 COPY --chown=0:1111 ./COPY_ROOT_0/ /
 ARG IMAGE_BASE
@@ -29,7 +29,7 @@ RUN set -eo pipefail && /opt/ai-dock/bin/build/layer0/init.sh | tee /var/log/bui
 
 RUN echo "bust cache"
 # Install software
-ARG COMFYUI_BUILD_REF
+ARG COMFYUI_BUILD_REF=v0.8.1
 ENV COMFYUI_BUILD_REF=${COMFYUI_BUILD_REF}
 COPY --chown=0:1111 ./COPY_ROOT_1/ /
 RUN set -eo pipefail && /opt/ai-dock/bin/build/layer1/init.sh | tee -a /var/log/build.log

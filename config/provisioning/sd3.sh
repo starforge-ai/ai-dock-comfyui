@@ -2,7 +2,7 @@
 
 # This file will be sourced in init.sh
 
-# https://raw.githubusercontent.com/ai-dock/comfyui/main/config/provisioning/sd3.sh
+# https://raw.githubusercontent.com/starforge-ai/comfyui/main/config/provisioning/sd3.sh
 
 # Packages are installed after nodes so we can fix them...
 

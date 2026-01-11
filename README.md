@@ -1,4 +1,4 @@
-[![Docker Build](https://github.com/ai-dock/comfyui/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ai-dock/comfyui/actions/workflows/docker-build.yml)
+[![Docker Build](https://github.com/starforge-ai/ai-dock-comfyui/actions/workflows/docker-build.yml/badge.svg)](https://github.com/starforge-ai/ai-dock-comfyui/actions/workflows/docker-build.yml)
 
 # AI-Dock + ComfyUI Docker Image
 
@@ -30,7 +30,7 @@ Tags follow these patterns:
 - `:cpu-[ubuntu-version]`
 
 
-Browse [ghcr.io](https://github.com/ai-dock/comfyui/pkgs/container/comfyui) for an image suitable for your target environment. Alternatively, view a select range of [CUDA](https://hub.docker.com/r/aidockorg/comfyui-cuda) and [ROCm](https://hub.docker.com/r/aidockorg/comfyui-rocm) builds at DockerHub.
+Browse [ghcr.io](https://github.com/starforge-ai/ai-dock-comfyui/pkgs/container/comfyui) for an image suitable for your target environment. Alternatively, view a select range of [CUDA](https://hub.docker.com/r/aidockorg/comfyui-cuda) and [ROCm](https://hub.docker.com/r/aidockorg/comfyui-rocm) builds at DockerHub.
 
 Supported Platforms: `NVIDIA CUDA`, `AMD ROCm`, `CPU`
 

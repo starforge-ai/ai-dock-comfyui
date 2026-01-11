@@ -4,7 +4,7 @@ on:
  workflow_dispatch:
 
 env:
-  UBUNTU_VERSION: 22.04
+  UBUNTU_VERSION: 24.04
   BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 
 jobs:
@@ -15,8 +15,8 @@ jobs:
       matrix:
         build:
           # Undeclared SHA tags with latest commit from master branch
-          - {latest: "false", python: "3.10", pytorch: "2.2.1"}
-          - {latest: "true", sha: "abc1234", python: "3.10", pytorch: "2.2.1"}
+          - {latest: "false", python: "3.11", pytorch: "2.9.0"}
+          - {latest: "true", sha: "abc1234", python: "3.11", pytorch: "2.9.0"}
     steps:
       -
         name: Env Setter

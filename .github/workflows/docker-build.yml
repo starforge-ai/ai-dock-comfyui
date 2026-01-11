@@ -228,7 +228,7 @@ jobs:
               latest: "false",
               comfyui: "v0.8.1",
               python: "3.11",
-              pytorch: "2.9.0",
+              pytorch: "2.7.0",
               rocm: "7.0.3-runtime",
             }
     steps:
@@ -300,3 +300,4 @@ jobs:
           push: true
           provenance: false
           tags: ${{ env.TAGS }}
+

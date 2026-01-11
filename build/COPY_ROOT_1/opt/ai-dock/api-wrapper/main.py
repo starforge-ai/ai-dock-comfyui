@@ -10,7 +10,7 @@ from workers.generation_worker import GenerationWorker
 from workers.postprocess_worker import PostprocessWorker
 import uuid
 
-app = FastAPI(root_path="/starforge-ai/api")
+app = FastAPI(root_path="/ai-dock/api")
 
 @app.on_event("startup")
 async def startup_event():

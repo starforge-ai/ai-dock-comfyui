@@ -8,7 +8,7 @@ build_nvidia_main() {
 
 build_nvidia_install_deps() {
     short_cuda_version="cu$(cut -d '.' -f 1,2 <<< "${CUDA_VERSION}" | tr -d '.')"
-    "$COMFYUI_VENV_PIP" install --pre --no-cache-dir \
+    "$COMFYUI_VENV_PIP" install --no-cache-dir \
         torch==${PYTORCH_VERSION} \
         torchvision \
         torchaudio \

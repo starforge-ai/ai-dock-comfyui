@@ -1,18 +1,18 @@
-[![Docker Build](https://github.com/starforge-ai/comfyui/actions/workflows/docker-build.yml/badge.svg)](https://github.com/starforge-ai/comfyui/actions/workflows/docker-build.yml)
+[![Docker Build](https://github.com/starforge-ai/ai-dock-comfyui/actions/workflows/docker-build.yml/badge.svg)](https://github.com/starforge-ai/ai-dock-comfyui/actions/workflows/docker-build.yml)
 
 # AI-Dock + ComfyUI Docker Image
 
 Run [ComfyUI](https://github.com/comfyanonymous/ComfyUI) in a highly-configurable, cloud-first AI-Dock container.
 
 >[!NOTE]
->These images do not bundle models or third-party configurations. You should use a [provisioning script](https://github.com/starforge-ai/base-image/wiki/4.0-Running-the-Image#provisioning-script) to automatically configure your container. You can find examples, including `SD3` & `FLUX.1` setup, in `config/provisioning`.
+>These images do not bundle models or third-party configurations. You should use a [provisioning script](https://github.com/ai-dock/base-image/wiki/4.0-Running-the-Image#provisioning-script) to automatically configure your container. You can find examples, including `SD3` & `FLUX.1` setup, in `config/provisioning`.
 
 
 ## Documentation
 
 All AI-Dock containers share a common base which is designed to make running on cloud services such as [vast.ai](https://link.ai-dock.org/vast.ai) as straightforward and user friendly as possible.
 
-Common features and options are documented in the [base wiki](https://github.com/starforge-ai/base-image/wiki) but any additional features unique to this image will be detailed below.
+Common features and options are documented in the [base wiki](https://github.com/ai-dock/base-image/wiki) but any additional features unique to this image will be detailed below.
 
 #### Version Tags
 
@@ -30,7 +30,7 @@ Tags follow these patterns:
 - `:cpu-[ubuntu-version]`
 
 
-Browse [ghcr.io](https://github.com/starforge-ai/comfyui/pkgs/container/comfyui) for an image suitable for your target environment. Alternatively, view a select range of [CUDA](https://hub.docker.com/r/aidockorg/comfyui-cuda) and [ROCm](https://hub.docker.com/r/aidockorg/comfyui-rocm) builds at DockerHub.
+Browse [ghcr.io](https://github.com/starforge-ai/ai-dock-comfyui/pkgs/container/comfyui) for an image suitable for your target environment. Alternatively, view a select range of [CUDA](https://hub.docker.com/r/aidockorg/comfyui-cuda) and [ROCm](https://hub.docker.com/r/aidockorg/comfyui-rocm) builds at DockerHub.
 
 Supported Platforms: `NVIDIA CUDA`, `AMD ROCm`, `CPU`
 
@@ -46,7 +46,7 @@ Supported Platforms: `NVIDIA CUDA`, `AMD ROCm`, `CPU`
 | `COMFYUI_URL`            | Override `$DIRECT_ADDRESS:port` with URL for ComfyUI |
 | `HF_TOKEN`               | Authenticate download requests from HuggingFace - Required for gated models (SD3, FLUX, etc.) |
 
-See the base environment variables [here](https://github.com/starforge-ai/base-image/wiki/2.0-Environment-Variables) for more configuration options.
+See the base environment variables [here](https://github.com/ai-dock/base-image/wiki/2.0-Environment-Variables) for more configuration options.
 
 ### Additional Python Environments
 
@@ -58,11 +58,11 @@ See the base environment variables [here](https://github.com/starforge-ai/base-i
 
 The `comfyui` environment will be activated on shell login.
 
-~~See the base micromamba environments [here](https://github.com/starforge-ai/base-image/wiki/1.0-Included-Software#installed-micromamba-environments).~~
+~~See the base micromamba environments [here](https://github.com/ai-dock/base-image/wiki/1.0-Included-Software#installed-micromamba-environments).~~
 
 ## Additional Services
 
-The following services will be launched alongside the [default services](https://github.com/starforge-ai/base-image/wiki/1.0-Included-Software) provided by the base image.
+The following services will be launched alongside the [default services](https://github.com/ai-dock/base-image/wiki/1.0-Included-Software) provided by the base image.
 
 ### ComfyUI
 
@@ -77,10 +77,10 @@ To manage this service you can use `supervisorctl [start|stop|restart] comfyui`.
 
 This service is available on port `8188` and is a work-in-progress to replace previous serverless handlers which have been depreciated; Old Docker images and sources remain available should you need them.
 
-You can access the api directly at `/starforge-ai/api/` or you can use the Swager/openAPI playground at `/starforge-ai/api/docs`.
+You can access the api directly at `/ai-dock/api/` or you can use the Swager/openAPI playground at `/ai-dock/api/docs`.
 
 >[!NOTE]
->All services are password protected by default. See the [security](https://github.com/starforge-ai/base-image/wiki#security) and [environment variables](https://github.com/starforge-ai/base-image/wiki/2.0-Environment-Variables) documentation for more information.
+>All services are password protected by default. See the [security](https://github.com/ai-dock/base-image/wiki#security) and [environment variables](https://github.com/ai-dock/base-image/wiki/2.0-Environment-Variables) documentation for more information.
 
 ## Pre-Configured Templates
 

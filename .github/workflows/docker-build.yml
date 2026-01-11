@@ -80,7 +80,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/starforge-ai/python:${{ matrix.build.python }}-v2-cpu-${{ env.UBUNTU_VERSION }}
+            IMAGE_BASE=ghcr.io/starforge-ai/ai-dock-python:${{ matrix.build.python }}-v2-cpu-${{ env.UBUNTU_VERSION }}
             PYTHON_VERSION=${{ matrix.build.python }}
             PYTORCH_VERSION=${{ matrix.build.pytorch }}
             COMFYUI_BUILD_REF=${{ env.COMFYUI_BUILD_REF }}
@@ -210,7 +210,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/starforge-ai/python:${{ matrix.build.python }}-v2-cuda-${{ matrix.build.cuda }}-${{ env.UBUNTU_VERSION }}
+            IMAGE_BASE=ghcr.io/starforge-ai/ai-dock-python:${{ matrix.build.python }}-v2-cuda-${{ matrix.build.cuda }}-${{ env.UBUNTU_VERSION }}
             PYTHON_VERSION=${{ matrix.build.python }}
             PYTORCH_VERSION=${{ matrix.build.pytorch }}
             COMFYUI_BUILD_REF=${{ env.COMFYUI_BUILD_REF }}
@@ -293,7 +293,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/starforge-ai/python:${{ matrix.build.python }}-v2-rocm-${{ matrix.build.rocm }}-${{ env.UBUNTU_VERSION }}
+            IMAGE_BASE=ghcr.io/starforge-ai/ai-dock-python:${{ matrix.build.python }}-v2-rocm-${{ matrix.build.rocm }}-${{ env.UBUNTU_VERSION }}
             PYTHON_VERSION=${{ matrix.build.python }}
             PYTORCH_VERSION=${{ matrix.build.pytorch }}
             COMFYUI_BUILD_REF=${{ env.COMFYUI_BUILD_REF }}
